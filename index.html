@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kenneth Jones Jr.</title>
+<meta name="description" content="Achievements and experience in fraud prevention data analytics.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f7f9;--surface:#fff;--ink:#101828;--muted:#4b5565;--line:#d5dae3;--accent:#2250e6;--accent-ink:#fff;color-scheme:light}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1420;--surface:#151d2c;--ink:#eef1f6;--muted:#a3adbf;--line:#2a3548;--accent:#86a2ff;--accent-ink:#0e1420;color-scheme:dark}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.0625rem/1.65 "Public Sans",system-ui,sans-serif}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px;border-radius:4px}
+.wrap{max-width:860px;margin:0 auto;padding:0 1.25rem}
+nav{border-bottom:1px solid var(--line);background:var(--bg);position:sticky;top:0;z-index:5}
+nav .wrap{display:flex;gap:1.25rem;align-items:center;overflow-x:auto;white-space:nowrap;padding-top:.75rem;padding-bottom:.75rem}
+nav strong{font-family:"Bricolage Grotesque",sans-serif;margin-right:auto}
+nav a{color:var(--muted);text-decoration:none;font-size:.95rem;font-weight:500}
+nav a:hover{color:var(--ink)}
+header.hero{padding:4.5rem 0 2.5rem;display:flex;gap:2rem;align-items:flex-start}
+.hero img{width:132px;height:132px;border-radius:50%;object-fit:cover;flex:none}
+h1{font:700 clamp(2.6rem,8vw,4.75rem)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;margin:0 0 .75rem}
+.role{font:500 1.25rem/1.3 "Bricolage Grotesque",sans-serif;margin:0}
+.place{color:var(--muted);margin:.25rem 0 1.25rem}
+.lede{max-width:60ch;margin:0 0 1.5rem}
+.actions{display:flex;flex-wrap:wrap;gap:.75rem}
+.btn{display:inline-block;padding:.65rem 1.1rem;border-radius:8px;border:1.5px solid var(--ink);color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn:hover{filter:brightness(1.08)}
+.metrics{margin:1rem 0 0;padding:0;list-style:none;border-left:4px solid var(--accent)}
+.metrics li{display:grid;grid-template-columns:8.5rem 1fr;gap:1rem;align-items:baseline;padding:.9rem 1.25rem;border-bottom:1px solid var(--line)}
+.metrics li:last-child{border-bottom:0}
+.metrics b{font:700 2.1rem/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em}
+.metrics span{color:var(--muted)}
+section{padding:3.25rem 0 0}
+h2{font:700 1.9rem/1.15 "Bricolage Grotesque",sans-serif;letter-spacing:-.02em;margin:0 0 1.5rem}
+h3{font:600 1.15rem/1.3 "Public Sans",sans-serif;margin:0}
+.dates{color:var(--muted);font-size:.95rem;margin:.15rem 0 .6rem}
+.company{font:500 1.05rem "Bricolage Grotesque",sans-serif;color:var(--muted);margin:0 0 1rem}
+.timeline{border-left:2px solid var(--line);padding-left:1.5rem;margin-left:.35rem}
+.entry{position:relative;margin-bottom:2.25rem}
+.entry::before{content:"";position:absolute;left:calc(-1.5rem - 7px);top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--accent);border:2px solid var(--bg)}
+.entry ul{margin:.25rem 0 0;padding-left:1.15rem}
+.entry li{margin-bottom:.55rem;max-width:68ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:1.25rem 1.4rem;margin-bottom:1rem}
+.card p{margin:.4rem 0 0;max-width:68ch}
+.tags{display:flex;flex-wrap:wrap;gap:.5rem;padding:0;margin:0 0 1.25rem;list-style:none}
+.tags li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:.3rem .85rem;font-size:.95rem}
+.sub{font-weight:600;margin:0 0 .6rem}
+footer{margin-top:4rem;border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+.err{padding:3rem 0}
+@media (max-width:620px){header.hero{flex-direction:column;padding-top:3rem}.metrics li{grid-template-columns:1fr;gap:.2rem}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<nav><div class="wrap" id="nav"></div></nav>
+<main class="wrap" id="app"></main>
+<script>
+const $ = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x) e.textContent = x; return e; };
+const link = (href, text, cls) => { const a = $('a', cls, text); a.href = href; if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; } return a; };
+const has = a => Array.isArray(a) && a.length;
+
+function section(id, title, nodes) {
+  const s = $('section'); s.id = id;
+  s.append($('h2', '', title), ...nodes);
+  return s;
+}
+function tags(list) { const u = $('ul', 'tags'); list.forEach(t => u.append($('li', '', t))); return u; }
+
+function render(d) {
+  document.title = d.name;
+  const app = document.getElementById('app'), nav = document.getElementById('nav');
+
+  // Hero
+  const hero = $('header', 'hero');
+  if (d.photo) { const img = $('img'); img.src = d.photo; img.alt = 'Portrait of ' + d.name; hero.append(img); }
+  const box = $('div');
+  box.append($('h1', '', d.name), $('p', 'role', d.title), $('p', 'place', d.location), $('p', 'lede', d.summary));
+  const actions = $('div', 'actions');
+  if (d.email) actions.append(link('mailto:' + d.email, 'Email me', 'btn primary'));
+  if (d.linkedin) actions.append(link(d.linkedin, 'LinkedIn', 'btn'));
+  if (d.github) actions.append(link(d.github, 'GitHub', 'btn'));
+  if (d.resume) actions.append(link(d.resume, 'Resume (PDF)', 'btn'));
+  box.append(actions);
+  hero.append(box);
+  app.append(hero);
+
+  // Metrics
+  if (has(d.metrics)) {
+    const ul = $('ul', 'metrics');
+    d.metrics.forEach(m => { const li = $('li'); li.append($('b', '', m.value), $('span', '', m.label)); ul.append(li); });
+    app.append(ul);
+  }
+
+  const sections = [];
+
+  if (has(d.experience)) {
+    const nodes = [];
+    d.experience.forEach(job => {
+      nodes.push($('p', 'company', job.company + (job.place ? ', ' + job.place : '')));
+      const tl = $('div', 'timeline');
+      job.roles.forEach(r => {
+        const e = $('div', 'entry');
+        e.append($('h3', '', r.title), $('p', 'dates', r.dates));
+        const ul = $('ul'); r.bullets.forEach(b => ul.append($('li', '', b))); e.append(ul);
+        tl.append(e);
+      });
+      nodes.push(tl);
+    });
+    sections.push(['experience', 'Experience', nodes]);
+  }
+
+  if (has(d.projects)) {
+    sections.push(['projects', 'Projects', d.projects.map(p => {
+      const c = $('div', 'card'); c.append($('h3', '', p.name));
+      if (p.text) c.append($('p', '', p.text));
+      if (p.tech) c.append(tags(p.tech));
+      if (p.url) c.append(link(p.url, p.linkText || 'View project'));
+      return c;
+    })]);
+  }
+
+  if (has(d.leadership)) {
+    sections.push(['leadership', 'Mentorship and leadership', d.leadership.map(l => {
+      const c = $('div', 'card'); c.append($('h3', '', l.org + ' | ' + l.role), $('p', 'dates', l.dates), $('p', '', l.text)); return c;
+    })]);
+  }
+
+  const skillNodes = [];
+  if (has(d.certifications)) skillNodes.push($('p', 'sub', 'Certifications'), tags(d.certifications));
+  if (has(d.skills)) skillNodes.push($('p', 'sub', 'Tools and skills'), tags(d.skills));
+  if (skillNodes.length) sections.push(['skills', 'Skills', skillNodes]);
+
+  if (has(d.education)) {
+    sections.push(['education', 'Education', d.education.map(e => {
+      const c = $('div', 'card'); c.append($('h3', '', e.school), $('p', '', e.degree), $('p', 'dates', e.dates));
+      if (e.detail) c.append($('p', '', e.detail)); return c;
+    })]);
+  }
+
+  sections.forEach(([id, title, nodes]) => {
+    app.append(section(id, title, nodes));
+    nav.append(link('#' + id, title));
+  });
+  nav.prepend($('strong', '', d.name.split(' ')[0]));
+
+  const f = $('footer'); f.textContent = '\u00A9 ' + new Date().getFullYear() + ' ' + d.name;
+  app.append(f);
+}
+
+fetch('data.json')
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(render)
+  .catch(() => {
+    const p = $('p', 'err', 'This page could not load data.json. Make sure data.json is in the same folder as index.html and that it is valid JSON. If you opened this file directly from your computer, view it through GitHub Pages instead.');
+    document.getElementById('app').append(p);
+  });
+</script>
+</body>
+</html>

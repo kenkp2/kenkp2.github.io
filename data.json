@@ -1,0 +1,77 @@
+{
+  "name": "Kenneth Jones Jr.",
+  "title": "Fraud Prevention Data Analytics Associate",
+  "location": "JPMorganChase, Tampa, FL",
+  "summary": "I build the data systems that help a bank catch fraud sooner: detection logic, automated reporting, and data quality controls across payment products.",
+  "photo": "",
+  "resume": "",
+  "email": "ken.jonesjr2017@gmail.com",
+  "linkedin": "https://www.linkedin.com/in/kenneth-jones-jr",
+  "github": "",
+
+  "metrics": [
+    { "value": "97%", "label": "success rate for an algorithm that separates business from personal entities in live transactions" },
+    { "value": "40+", "label": "data fields validated automatically against U.S. Government standards" },
+    { "value": "50+", "label": "automated fraud analytics reports delivered daily to senior leadership" },
+    { "value": "11,000", "label": "minutes of manual work removed every week" }
+  ],
+
+  "experience": [
+    {
+      "company": "JPMorganChase",
+      "place": "Tampa, FL",
+      "roles": [
+        {
+          "title": "CIB Fraud Prevention Data Analytics Associate",
+          "dates": "June 2025 to present",
+          "bullets": [
+            "Developed an algorithm that separates business from personal entities in live transactions by joining internal payment datasets. It scored a 97% success rate and sharpens machine learning rule design and fraud detection across multiple lines of business.",
+            "Led the design of an automated data quality system that validates 40+ field requirements to U.S. Government standards at city-level transaction volumes. It delivered 7 months of continuous risk prevention and protects the firm from high-value financial penalties.",
+            "Built and automated 50+ fraud analytics Alteryx reports with scheduled daily distribution to senior leadership and Tableau dashboard refreshes, removing about 11,000 minutes of manual work per week.",
+            "Spearheaded the end-to-end migration of legacy SQL queries and Tableau dashboards during the enterprise data lake transition, coordinating stakeholders and validation to keep reporting continuous and faster."
+          ]
+        },
+        {
+          "title": "CIB Fraud Prevention Product & Operations Corporate Analyst",
+          "dates": "July 2023 to May 2025",
+          "bullets": [
+            "Wrote 30+ SQL queries in AWS Athena (joins, JSON extract, table creation) for payment business cases, including fixing records, validating tables for new products, and supplying data to onboard a new fraud project engine.",
+            "Analyzed data across 25+ Alteryx workflows and applications to build new reporting, speed up existing workflows, and flag nearly 1K missing data lake entries.",
+            "Partnered with product leads on an Alteryx reporting solution spanning three payment types and databases with millions of client transactions, used by Product, Strategy, Operations, and Commercial Bank Fraud teams.",
+            "Worked with Cybersecurity Technology Control leads on updated procedures for senior management, and presented them in a virtual webinar to 200+ JPMC employees.",
+            "Helped prepare and lead technical and operational readiness for ten successful platform releases that improved fraud detection capabilities."
+          ]
+        }
+      ]
+    }
+  ],
+
+  "projects": [],
+
+  "leadership": [
+    {
+      "org": "Big Brothers Big Sisters of America",
+      "role": "Mentor",
+      "dates": "September 2023 to present",
+      "text": "Mentored 25+ underrepresented high school students over two years in collaboration with JPMorganChase, leading career development, academic growth, and financial planning activities. Supported two students individually through graduation and the transition into adulthood."
+    },
+    {
+      "org": "Tampa Wellness & Tampa Learning (Business Resource Groups)",
+      "role": "Committee Member",
+      "dates": "September 2023 to present",
+      "text": "Created and distributed site-wide communication on wellness initiatives, professional development, and business trends. Organized events with senior management and co-led onboarding programs."
+    }
+  ],
+
+  "education": [
+    {
+      "school": "University of Illinois at Chicago",
+      "degree": "B.A. in Information and Decision Sciences, Concentration in Business Analytics",
+      "dates": "August 2019 to May 2023",
+      "detail": "Coursework: Operations Management, Statistics, Data Mining, Database Technology, Python & Java Programming"
+    }
+  ],
+
+  "certifications": ["Alteryx Designer", "Tableau"],
+  "skills": ["SQL", "Amazon Athena", "Alteryx Server Automation", "Excel", "Jira", "Confluence", "Salesforce", "Postman"]
+}
