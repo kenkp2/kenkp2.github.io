@@ -11,13 +11,13 @@
 
   "about": [
     "I was born and raised in Chicago and studied Information and Decision Sciences at the University of Illinois at Chicago, with a concentration in business analytics. In 2023 I joined JPMorganChase in Tampa as a Corporate Analyst on the Commercial & Investment Bank's fraud prevention product and operations team. Since June 2025 I have been a Data Analytics Associate on the same team.",
-    "My work sits where data, automation, and risk meet: SQL and Alteryx pipelines, Tableau reporting, and data quality controls that help the firm spot fraud sooner and respond to regulatory requests with confidence. Outside of work, I mentor high school students through Big Brothers Big Sisters.",
+    "My work sits where data, automation, and risk meet: SQL and Alteryx pipelines, Tableau reporting, and data quality controls that help the firm spot fraud sooner and respond to regulatory requests with confidence. Outside of work, I mentor young people through Big Brothers Big Sisters.",
     "Away from the keyboard, I love cycling, interior design, cars, and dogs, and I follow the Chicago Bulls and Bears. Tampa is home now, and my favorite places here are the quiet, serene beaches and islands."
   ],
 
   "metrics": [
     { "value": "97%", "label": "success rate for an algorithm that separates business from personal entities in live transactions" },
-    { "value": "40+", "label": "data fields validated automatically against U.S. Government standards" },
+    { "value": "40+", "label": "data fields validated and automated against FinCEN U.S. Government standards" },
     { "value": "250+", "label": "Alteryx Server deployments across new workflows, enhancements, and production updates" },
     { "value": "11,000", "label": "minutes of manual work removed every week" }
   ],
@@ -37,7 +37,7 @@
             "Delivered 16 marquee ad-hoc fraud analyses and supported 100% on-time Commercial & Investment Bank (CIB) monthly business review (MBR) reporting across 3 global hubs and the APAC, WHEM, EMEA, and NAMR regions, including attendance and productivity reporting, translating complex data into actionable insights for Fraud, Recovery, Operations, and leadership stakeholders.",
             "Strengthened fraud reporting, controls, and stakeholder enablement through a platform recertification, firmwide Alteryx SAML/SSO support with a 100% success rate, status reporting, case triage, and analytics support for a multi-phase fraud initiative, partnering across strategy, operations, compliance, technology, and data teams.",
             "Developed an algorithm that separates business from personal entities in live transactions by joining internal payment datasets. It scored a 97% success rate and sharpens machine learning rule design and fraud detection across multiple lines of business.",
-            "Led the design of an automated data quality system that validates 40+ field requirements to U.S. Government standards at city-level transaction volumes. It delivered 7 months of continuous risk prevention and protects the firm from high-value financial penalties.",
+            "Led the design of an automated data quality system that validates 40+ field requirements to FinCEN U.S. Government standards at city-level transaction volumes. It delivered 7 months of continuous risk prevention and protects the firm from high-value financial penalties.",
             "Spearheaded the end-to-end migration of legacy SQL queries and Tableau dashboards during the enterprise data lake transition, coordinating stakeholders and validation to keep reporting continuous and improve its performance."
           ]
         },
@@ -63,13 +63,19 @@
       "org": "Big Brothers Big Sisters of America",
       "role": "Mentor",
       "dates": "September 2023 to present",
-      "text": "Mentored 25+ underrepresented high school students over two years in collaboration with JPMorganChase, leading career development, academic growth, and financial planning activities. Supported two students individually through graduation and the transition into adulthood."
+      "text": "Mentored four underrepresented students through Big Brothers Big Sisters, leading career development, academic growth, and financial planning activities. Two now participate in the Big Futures Adulthood program."
     },
     {
       "org": "Tampa Wellness & Tampa Learning (Business Resource Groups)",
       "role": "Committee Member",
       "dates": "September 2023 to present",
       "text": "Created and distributed site-wide communication on wellness initiatives, professional development, and business trends. Organized events with senior management and co-led onboarding programs."
+    },
+    {
+      "org": "University of Illinois Chicago, College of Business Administration",
+      "role": "Cohort Captain",
+      "dates": "May 2021 to May 2023",
+      "text": "Selected as 1 of 5 upperclassmen to serve as a Cohort Captain, working with UIC College of Business Administration leadership and the Dean. Partnered with student and faculty leaders to guide 400+ undergraduate students toward success in the College of Business across Finance, Accounting, Information Systems, and internship roles. Worked with faculty to redesign and restructure the new Cohort program using both in-person and virtual activities, setting College of Business standards for future incoming classes."
     }
   ],
 
