@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Kenneth Jones Jr.</title>
 <meta name="description" content="Achievements and experience in fraud prevention data analytics.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Kenneth Jones Jr. | Fraud Prevention Data Analytics">
+<meta property="og:description" content="Fraud analytics, automation, and data quality at JPMorganChase. Experience, certifications, and achievements.">
+<meta property="og:url" content="https://kenkp2.github.io/">
+<meta property="og:image" content="https://kenkp2.github.io/photo.jpg">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -23,7 +29,7 @@ nav strong{font-family:"Bricolage Grotesque",sans-serif;margin-right:auto}
 nav a{color:var(--muted);text-decoration:none;font-size:.95rem;font-weight:500}
 nav a:hover{color:var(--ink)}
 header.hero{padding:4.5rem 0 2.5rem;display:flex;gap:2rem;align-items:flex-start}
-.hero img{width:132px;height:132px;border-radius:50%;object-fit:cover;flex:none}
+.hero img{width:148px;height:148px;border-radius:50%;object-fit:cover;object-position:center 20%;flex:none}
 h1{font:700 clamp(2.6rem,8vw,4.75rem)/1 "Bricolage Grotesque",sans-serif;letter-spacing:-.03em;margin:0 0 .75rem}
 .role{font:500 1.25rem/1.3 "Bricolage Grotesque",sans-serif;margin:0}
 .place{color:var(--muted);margin:.25rem 0 1.25rem}
@@ -53,6 +59,10 @@ h3{font:600 1.15rem/1.3 "Public Sans",sans-serif;margin:0}
 .tags li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:.3rem .85rem;font-size:.95rem}
 .sub{font-weight:600;margin:0 0 .6rem}
 footer{margin-top:4rem;border-top:1px solid var(--line);padding:2rem 0 3rem;color:var(--muted);font-size:.95rem}
+.about p{max-width:64ch;margin:0 0 1rem}
+.more{margin-top:.25rem;background:none;border:1.5px solid var(--line);color:var(--ink);border-radius:8px;padding:.45rem .9rem;font:600 .9rem "Public Sans",system-ui,sans-serif;cursor:pointer}
+.more:hover{border-color:var(--ink)}
+.tags li a{font-weight:500}
 .err{padding:3rem 0}
 @media (max-width:620px){header.hero{flex-direction:column;padding-top:3rem}.metrics li{grid-template-columns:1fr;gap:.2rem}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -63,13 +73,28 @@ footer{margin-top:4rem;border-top:1px solid var(--line);padding:2rem 0 3rem;colo
 <main class="wrap" id="app"></main>
 <script>
 const $ = (t, c, x) => { const e = document.createElement(t); if (c) e.className = c; if (x) e.textContent = x; return e; };
-const link = (href, text, cls) => { const a = $('a', cls, text); a.href = href; if (/^https?:/.test(href)) { a.target = '_blank'; a.rel = 'noopener'; } return a; };
+const link = (href, text, cls) => { const a = $('a', cls, text); a.href = href; if (/^https?:/.test(href) || /\.pdf$/i.test(href)) { a.target = '_blank'; a.rel = 'noopener'; } return a; };
 const has = a => Array.isArray(a) && a.length;
 
 function section(id, title, nodes) {
   const s = $('section'); s.id = id;
   s.append($('h2', '', title), ...nodes);
   return s;
+}
+function certs(list) {
+  const u = $('ul', 'tags');
+  list.forEach(c => {
+    const li = $('li');
+    if (typeof c === 'string') { li.textContent = c; }
+    else {
+      if (c.file) li.append(link(c.file, c.name)); else li.append(document.createTextNode(c.name));
+      const meta = [c.issuer, c.date, c.id ? 'ID ' + c.id : ''].filter(Boolean).join(', ');
+      if (meta) li.append(document.createTextNode(' (' + meta + ') '));
+      if (c.verify) li.append(link(c.verify, 'Verify'));
+    }
+    u.append(li);
+  });
+  return u;
 }
 function tags(list) { const u = $('ul', 'tags'); list.forEach(t => u.append($('li', '', t))); return u; }
 
@@ -100,6 +125,12 @@ function render(d) {
 
   const sections = [];
 
+  if (has(d.about)) {
+    const box = $('div', 'about');
+    d.about.forEach(t => box.append($('p', '', t)));
+    sections.push(['about', 'About', [box]]);
+  }
+
   if (has(d.experience)) {
     const nodes = [];
     d.experience.forEach(job => {
@@ -108,7 +139,20 @@ function render(d) {
       job.roles.forEach(r => {
         const e = $('div', 'entry');
         e.append($('h3', '', r.title), $('p', 'dates', r.dates));
-        const ul = $('ul'); r.bullets.forEach(b => ul.append($('li', '', b))); e.append(ul);
+        const LIMIT = 5, ul = $('ul');
+        r.bullets.forEach((b, i) => { const li = $('li', '', b); if (i >= LIMIT) li.hidden = true; ul.append(li); });
+        e.append(ul);
+        if (r.bullets.length > LIMIT) {
+          const extra = r.bullets.length - LIMIT, btn = $('button', 'more', 'Show ' + extra + ' more');
+          btn.type = 'button'; btn.setAttribute('aria-expanded', 'false');
+          btn.addEventListener('click', () => {
+            const open = btn.getAttribute('aria-expanded') === 'true';
+            ul.querySelectorAll('li').forEach((li, i) => { if (i >= LIMIT) li.hidden = open; });
+            btn.setAttribute('aria-expanded', String(!open));
+            btn.textContent = open ? 'Show ' + extra + ' more' : 'Show fewer';
+          });
+          e.append(btn);
+        }
         tl.append(e);
       });
       nodes.push(tl);
@@ -133,7 +177,7 @@ function render(d) {
   }
 
   const skillNodes = [];
-  if (has(d.certifications)) skillNodes.push($('p', 'sub', 'Certifications'), tags(d.certifications));
+  if (has(d.certifications)) skillNodes.push($('p', 'sub', 'Certifications'), certs(d.certifications));
   if (has(d.skills)) skillNodes.push($('p', 'sub', 'Tools and skills'), tags(d.skills));
   if (skillNodes.length) sections.push(['skills', 'Skills', skillNodes]);
 
